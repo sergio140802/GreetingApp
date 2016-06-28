@@ -1,2 +1,2 @@
 # timeBasedGreetingApp
-https://travis-ci.org/travis-ci/travis-web.svg?branch=master
+https://travis-ci.org/sergio140802/GreetingApp.svg?branch=master

@@ -14,6 +14,7 @@ import java.util.Locale;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -35,6 +36,13 @@ public class AppTest
         MessagesService messagesService = mock(GreetingMessagesService.class);
         messagesService.getByDateAndLocale(date, locale);
         verify(messagesService).getByDateAndLocale(date, locale);
+    }
+
+    @Test
+    public void verifyMessageExist() {
+        Messages messages = new MessagesFactory().getMessages(MessagesType.RESOURCE_BUNDLE);
+        String expectedMessage = messages.getMessage("good.morning", locale);
+        assertNotNull(expectedMessage);
     }
 
     @Test
